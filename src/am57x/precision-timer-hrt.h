@@ -16,6 +16,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <sdtint.h>
+#include <stdint.h>
 
 void interval_wait(uint32_t interval_ms);

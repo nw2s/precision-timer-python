@@ -22,15 +22,21 @@
 #include <time.h>
 #include <sys/time.h>
 
+#include "precision-timer-hrt.h"
+
 int main()
 {
 	while (1)
 	{
-		struct timespec ts;
-	    ts.tv_sec = 3;
-	    ts.tv_nsec = 0;
+		// struct timespec ts;
+		//
+		// clock_gettime(CLOCK_MONOTONIC, &ts);
+		//
+		// 	    ts.tv_sec = ts.tv_sec + 3;
+		//
+		// clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &ts, NULL);
 
-		nanosleep(&ts, NULL);
+		interval_wait(1000);
 
 		struct timeval tp;
 		gettimeofday(&tp, NULL);

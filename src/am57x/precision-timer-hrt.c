@@ -39,7 +39,7 @@ void interval_wait(uint32_t interval_ms)
 	/* First time around, set last time to now */
 	if (last_time.tv_sec == 0)
 	{
-		clock_gettime(CLOCK_MONOTONIC_RAW, &last_time);
+		clock_gettime(CLOCK_MONOTONIC, &last_time);
 		next_time = last_time;
 	}
 	
@@ -52,6 +52,6 @@ void interval_wait(uint32_t interval_ms)
 	last_time = next_time;
 	next_time = tsAdd(last_time, interval_ts);
 
-	clock_nanosleep(CLOCK_MONOTONIC_RAW, TIMER_ABSTIME, &next_time, NULL);
+	clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &next_time, NULL);
 }
 

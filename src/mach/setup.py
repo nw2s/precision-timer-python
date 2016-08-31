@@ -22,7 +22,6 @@ from Cython.Distutils import build_ext
 from Cython.Build import cythonize
 
 sourcefiles = ['precision_timer.pyx', 'machthread.c', 'precision-timer-osx.c']
-#sourcefiles = ['precision_timer.pyx', 'machthread.c']
 
 extensions = [Extension("precision_timer", sourcefiles)]
 
