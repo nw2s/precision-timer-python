@@ -28,14 +28,6 @@ int main()
 {
 	while (1)
 	{
-		// struct timespec ts;
-		//
-		// clock_gettime(CLOCK_MONOTONIC, &ts);
-		//
-		// 	    ts.tv_sec = ts.tv_sec + 3;
-		//
-		// clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &ts, NULL);
-
 		interval_wait(1000);
 
 		struct timeval tp;
