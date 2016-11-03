@@ -22,6 +22,11 @@ cdef extern from "precision-timer-osx.h":
 
 	void interval_wait(uint32_t interval_ms)
 	
+	double get_absolute_time()
+
+	void absolute_wait(double t)
+	
+	
 def configurethread(period_time_ms, computation_time_ms, constraint_time_ms):
 
 	configure_thread(period_time_ms, computation_time_ms, constraint_time_ms)
@@ -29,5 +34,13 @@ def configurethread(period_time_ms, computation_time_ms, constraint_time_ms):
 def intervalwait(interval_ms):
 
 	interval_wait(interval_ms)
-	
+			
+def getabsolutetime():
+
+	return get_absolute_time()
+
+def absolutewait(double t):
+
+	absolute_wait(t)
+
 	

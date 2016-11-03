@@ -19,3 +19,7 @@
 #include <stdint.h>
 
 void interval_wait(uint32_t interval_ms);
+
+double get_absolute_time();
+
+void absolute_wait(double t);

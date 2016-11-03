@@ -20,9 +20,20 @@ cdef extern from "precision-timer-hrt.h":
 
 	void interval_wait(uint32_t interval_ms)
 
+	double get_absolute_time()
+
+	void absolute_wait(double t)
+
 	
 def intervalwait(interval_ms):
 
 	interval_wait(interval_ms)
 	
-	
+
+def getabsolutetime():
+
+	return get_absolute_time()
+
+def absolutewait(double t):
+
+	absolute_wait(t)

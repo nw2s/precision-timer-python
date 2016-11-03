@@ -33,6 +33,23 @@ static void ms2ts(struct timespec *ts, uint32_t ms)
     ts->tv_nsec = (ms % 1000) * 1000000;
 }
 
+double get_absolute_time()
+{
+	timespec t;
+	
+	clock_gettime(CLOCK_MONOTONIC, &t);
+
+	return tsFloat(t);
+}
+
+void absolute_wait(double t)
+{
+	timespec ts;
+	
+	ts = tsCreateF(t);
+	
+	return t;
+}
 
 void interval_wait(uint32_t interval_ms)
 {

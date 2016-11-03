@@ -47,6 +47,27 @@ int configure_thread(uint32_t period_time_ms, uint32_t computation_time_ms, uint
 	return set_mach_thread_policy(period_time_ms, computation_time_ms, constraint_time_ms);
 }
 
+double get_absolute_time()
+{
+	mach_timebase_info(&timebase_info);
+	
+	uint64_t t_abs = mach_absolute_time();
+	
+	uint64_t t = abs_to_nanos(t_abs);
+	
+	return t * 1E-9;	
+}
+
+void absolute_wait(double t)
+{
+	mach_timebase_info(&timebase_info);
+
+	uint64_t t_nanos = (uint64_t)(t * 1E9);
+
+	uint64_t t_abs = nanos_to_abs(t_nanos);
+	
+	wait_until_time(t_abs);
+}
 
 void interval_wait(uint32_t interval_ms)
 {

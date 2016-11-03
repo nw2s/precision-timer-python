@@ -21,4 +21,7 @@
 int configure_thread(uint32_t period_time_ms, uint32_t computation_time_ms, uint32_t constraint_time_ms);
 
 void interval_wait(uint32_t interval_ms);
-	
+
+double get_absolute_time();
+
+void absolute_wait(double t);
